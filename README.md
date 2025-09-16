@@ -168,7 +168,7 @@ Warning: Number of column headers provided must be equal to number of columns in
 ...The script will then proceed to process the data and generate the output files.
 ```
 
-__References:__
+:arrow_right: __References:__
 
 [5] ICRP, 2009. Adult Reference Computational Phantoms. ICRP Publication 110. Ann. ICRP 39 (2). Available from: https://www.icrp.org/publication.asp?id=icrp%20publication%20110
 
