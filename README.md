@@ -40,7 +40,7 @@ __Note:__ This program is a modern Python re-implementation of a similar tool or
   - The columns (i.e. at least Organ ID, Material ID and Density) should each all be a fixed width, as in the example image below.
 An example of organlist file is in the next image. I recommend you define the Organ ID for air outside body as 0, the organlists included with phantom files usually don't include this Organ ID. As for the Material ID for air outside phantom, it would depend on your computational dosimetry objectives, but the general recommendation is Material ID (air outside phantom) != Material ID (air inside phantom).
 
-<img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="200" />
+<img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="800" />
 
 ### Output files:
 
