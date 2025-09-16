@@ -19,11 +19,11 @@ __Note:__ This program is a modern Python re-implementation of a similar tool or
 
 [1] Borbinha J. Organ Dose Estimates in Thorax CT: Voxel Phantom Organ Matching With Individual Patient Anatomy. MSc Thesis, 2017. Available from: [http://hdl.handle.net/10362/](https://run.unl.pt/bitstream/10362/29982/1/Borbinha_2017.pdf) 
 
-[2] Borbinha J, Di Maria S, Madeira P, Belchior A, Baptista M, Vaz P. Increasing organ dose accuracy through voxel phantom organ matching with individual patient anatomy. Radiat Phys Chem.2019 Jun;159:35–46. doi: [10.1016/j.radphyschem.2019.02.014](https://10.1016/j.radphyschem.2019.02.014)
+[2] Borbinha J, Di Maria S, Madeira P, Belchior A, Baptista M, Vaz P. Increasing organ dose accuracy through voxel phantom organ matching with individual patient anatomy. Radiat Phys Chem. 2019 Jun;159:35–46. doi: [10.1016/j.radphyschem.2019.02.014](https://www.doi.org/10.1016/j.radphyschem.2019.02.014)
 
 [3] FNEA (2019), PENELOPE 2018: A code system for Monte Carlo simulation of electron and photon transport: Workshop Proceedings, Barcelona, Spain, 28 January – 1 February 2019, OECD Publishing, Paris, doi: [doi.org/10.1787/32da5043-en](https://doi.org/10.1787/32da5043-en) 
 
-[4] Sempau J., Badal A., Brualla L. A PENELOPE-based system for the automated Monte Carlo simulation of clinacs and voxelized geometries-application to far-from-axis fields. Med. Phys. 2011; 38(11):5887–5895. doi:[10.1118/1.3643029](https://doi.org/10.1118/1.3643029)
+[4] Sempau J., Badal A., Brualla L. A PENELOPE-based system for the automated Monte Carlo simulation of clinacs and voxelized geometries-application to far-from-axis fields. Med Phys. 2011;38(11):5887–5895. doi:[10.1118/1.3643029](https://doi.org/10.1118/1.3643029)
 
 ## Description
 
