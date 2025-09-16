@@ -37,10 +37,10 @@ __Note:__ This program is a modern Python re-implementation of a similar tool or
 - __Organlist file:__ Lists at least Organ ID, Material ID and Density in columns, not necessarily in this order.
   - May also come in many formats: '.dat', '.xlsx','.txt','.csv', etc.
   - The organlist file can be created by the user or come with the phantom as a package.
-  - The columns (i.e. at least Organ ID, Material ID and Density) should all be a fixed width, as in the example image.
+  - The columns (i.e. at least Organ ID, Material ID and Density) should each all be a fixed width, as in the example image below.
 An example of organlist file is in the next image. I recommend you define the Organ ID for air outside body as 0, the organlists included with phantom files usually don't include this Organ ID. As for the Material ID for air outside phantom, it would depend on your computational dosimetry objectives, but the general recommendation is Material ID (air outside phantom) != Material ID (air inside phantom).
 
-![Simple example of organlist created by user](images/organlist_ubuntu.png)
+<img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="200" />
 
 ### Output files:
 
