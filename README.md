@@ -42,7 +42,7 @@ __Note:__ This program is a modern Python re-implementation of a similar tool or
   - The columns (i.e. at least Organ ID, Material ID and Density) should each all be a fixed width, as in the example image below.
 An example of organlist file is in the next image. I recommend you define the Organ ID for air outside body as 0, the organlists included with phantom files usually don't include this Organ ID. As for the Material ID for air outside phantom, it would depend on your computational dosimetry objectives, but the general recommendation is Material ID (air outside phantom) != Material ID (air inside phantom).
 
-__DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! PENELOPE DOES NOT ACCEPT MATERIAL = 0!__
+> __DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! PENELOPE DOES NOT ACCEPT MATERIAL = 0!__
 
 <img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="600" />
 
@@ -115,55 +115,55 @@ The phantom file available with ICRP-AF is 'AF.dat' and the organlist file is 'A
 
 Additionally, according to "ICRP Publication 110: Adult Reference Computational Phantoms", the nº of voxels in x, y, z is 299, 137, 348; and the voxel resolution is x, y, z is 0.1775, 0.1775, 0.348 cm. Then, see what is the number of Organ IDs and Material IDs in the organlist file. The number of Organ IDs is the number of lines in the organlist file (minus the header). The number of Material IDs should be the maximum material value.
 
-DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! OTHERWISE VALUE 0 WILL TRANSPORT TO VOX FILE AND PENELOPE DOES NOT ACCEPT MATERIAL = 0! (See Description > Organlist file for more information)
+> DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! OTHERWISE VALUE 0 WILL TRANSPORT TO VOX FILE AND PENELOPE DOES NOT ACCEPT MATERIAL = 0! (See Description > Organlist file for more information)
 
 
-This is an example of partial script execution considering ICRP-AF, where user input is in bold.
+This is an example of partial script execution considering ICRP-AF.
 
 ```
 python ReadPhantom.py
 
 Please insert the name of the phantom file:
-> __AF.dat__
+> AF.dat
 
 Is your file in binary or in ASCII? (type 0 for binary or 1 for ASCII)
-> __1__
+> 1
 
 Type in the number of voxels of the phantom in x,y,z.
-> __299 137 348__
+> 299 137 348
 
 Type in the voxel resolution in x,y,z /cm.
-> __0.1775 0.1775 0.484__
+> 0.1775 0.1775 0.484
 
 Type in the number of different materials in the phantom.
-> __53__
+> 53
 
 Type in the number of organ IDs - i.e. number of lines in organlist.dat.
-> __141__
+> 141
 
 >>> Characteristics of your phantom file:
  > Number of voxels in x,y,z: 299 137 348
- > Voxel resolution in x,y,z /cm: 0.17750 0.17750 0.17750 0.48400
+ > Voxel resolution in x,y,z /cm: 0.17750 0.17750 0.48400
  > Phantom size (approximate value) in x,y,z /cm: 62.79000 28.77000 278.40000
  > Total number of voxels: 14255124
 
 Please check if these values are correct. Do you wish to continue? (y/n)
-> __y__
+> y
 
 Reading the phantom and organlist files...
 
 What is the name of the organlist file?
-> __organlist.dat__
+> organlist.dat
 
 Should any rows be skipped when reading the organlist file (includes headers)? If yes, how many? Default is 4.
-> __4__
+> 4
 
 What are the headers of the columns in the organlist file? Write the names separated by commas.
 It is strongly advised that the names contain no spaces.
 Default names are: "Organ_ID", "Organ", "Material_ID", "Density").
 Warning: Number of column headers provided must be equal to number of columns in the organlist file.
 
-> __Organ_ID, Organ, Material_ID, Density__
+> Organ_ID, Organ, Material_ID, Density
 
 ...The script will then proceed to process the data and generate the output files.
 ```
