@@ -35,12 +35,16 @@ __Note:__ This program is a modern Python re-implementation of a similar tool or
   - In older phantom files, there may be a header present, that needs to be removed, for the script to work properly.
 
 - __Organlist file:__ Lists at least Organ ID, Material ID and Density in columns, not necessarily in this order.
+  - This is a very important file, it is the 'key' that converts Organ ID numbers in the raw voxel phantom file into Material ID and Density data readable by PENELOPE/penEasy.
+  - The organlist file can be created by the user (highly customizable) or come with the phantom as a package. Some examples are given in this README.
   - May also come in many formats: '.dat', '.xlsx','.txt','.csv', etc.
-  - The organlist file can be created by the user or come with the phantom as a package.
+  - If the organlist file has any negative densities, these probably originate from an MCNP file (another MC software), so the script will calculate the absolute value of those densities and continue. Be careful about this mechanic if MCNP is not the origin of negative density values.
   - The columns (i.e. at least Organ ID, Material ID and Density) should each all be a fixed width, as in the example image below.
 An example of organlist file is in the next image. I recommend you define the Organ ID for air outside body as 0, the organlists included with phantom files usually don't include this Organ ID. As for the Material ID for air outside phantom, it would depend on your computational dosimetry objectives, but the general recommendation is Material ID (air outside phantom) != Material ID (air inside phantom).
 
-<img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="800" />
+__DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! PENELOPE DOES NOT ACCEPT MATERIAL = 0!__
+
+<img src="images/organlist_ubuntu.png" alt="Simple example of organlist created by user" width="600" />
 
 ### Output files:
 
@@ -49,15 +53,15 @@ An example of organlist file is in the next image. I recommend you define the Or
   - To avoid the mixing of several files from different phantoms, I recommend you rename the 'phantom.vox' file with indicative names.
   - This file has a 7 line header
 
-Example header for International Commission on Radiation Protection (ICRP) adult female reference phantom:
+Example header for International Commission on Radiation Protection (ICRP) adult female reference phantom [5]:
 
 ```
 [SECTION VOXELS HEADER V.2008_04_13]
-299 137 348                                                             (number of voxels in x,y,z) 
-0.1775 0.1775 0.484                                                     (voxel resolution in x,y,z /cm)  
-1                                                                       (1st column for material)  
-2                                                                       (2nd column for density)  
-0                                                                       (no blank line after xy cycle)  
+299 137 348                                                   (number of voxels in x,y,z) 
+0.1775 0.1775 0.484                                           (voxel resolution in x,y,z /cm)  
+1                                                             (1st column for material)  
+2                                                             (2nd column for density)  
+0                                                             (no blank line after xy cycle)  
 [END OF VXH SECTION] 
 ```
 
@@ -91,27 +95,80 @@ python readPhantom.py
 
 The script will then guide you through a command-line interface, consisting of a series of interactive prompts, to gather all the necessary phantom information and file names.
 
-## Configuration
+## Execution
+The script is highly user-friendly and configurable through the command-line interface. Most parameters, like file names and phantom dimensions, are provided during runtime. An example configuration is given with this README, using the ICRP adult female reference phantom (ICRP-AF). The files for ICRP-AF (and for the reference male phantom), as well as ICRP Publication 110: Adult Reference Computational Phantoms can be downloaded from [5]. Additionally the ICRP Publication 110: Adult Reference Computational Phantoms contains extensive and detailed information about voxel number, voxel dimensions, phantom size, resolution, material, density, etc. regarding both phantoms. 
 
-The script is highly user-friendly and configurable through the command-line interface. Most parameters, like file names and phantom dimensions, are provided during runtime.
+__Notes__:
 
-__Key Prompts   Default Values:__
+- Voxel resolution is the voxel dimension in x, y and z (always in cm).
+  
+- If you just press Enter,or any element between commas is empty, on a prompt with a default value, the script will automatically use the default value.
+- The script performs constant error checks throught the execution, e.g. user input has inconsistent value of file is not found on directory. In these cases, the script will stop and an error message will inform you what you need to fix.
 
-- __Input File Type:__ 0 for binary or 1 for ASCII.
+- Regarding the organlist file, you'll be asked for the name of your organlist.dat file, the number of header rows to skip, and the column names. This happens because organlist files are highly customizable.
 
-- __Voxel Dimensions:__ The number of voxels in x, y, and z.
+__Example of script execution considering ICRP-AF:__
 
-- __Voxel Resolution:__ The physical size of each voxel in x, y, and z, in centimeters.
+The phantom file available with ICRP-AF is 'AF.dat' and the organlist file is 'AF_organs.dat'. ´AF_organs.dat´ can be the organlist file because it has at least Organ ID, Material ID and Density columns and there is a fixed width per column. The default values in this script are set to read ICRP-formatted organlist files like ´AF_organs.dat´. Since the titles of the columns in the files are two lines, they can't be properly read. It's necessary to select 4 as number of header rows to skip to start reading the data immediately, as cen be seen in the following image, of an ICRP-formatted organlist for ICRP-AF.
 
-- __Organlist File Details:__ You'll be asked for the name of your organlist.dat file, the number of header rows to skip, and the column names.
+<img src="images/organlist_AF.png" alt="Example of ICRP-formatted organlist for ICRP-AF" width="600" />
 
-- __Output File Names:__ You can specify custom names for the output files or accept the defaults:
+Additionally, according to "ICRP Publication 110: Adult Reference Computational Phantoms", the nº of voxels in x, y, z is 299, 137, 348; and the voxel resolution is x, y, z is 0.1775, 0.1775, 0.348 cm. Then, see what is the number of Organ IDs and Material IDs in the organlist file. The number of Organ IDs is the number of lines in the organlist file (minus the header). The number of Material IDs should be the maximum material value.
 
-- __VOX file:__ Defaults to phantom.vox.
-
-- __GNUPLOT files:__ Defaults to ct-den-matXY.dat, ct-den-matXZ.dat, and ct-den-matYZ.dat.
-
-If you just press Enter on a prompt with a default value, the script will automatically use that default.
+DO NOT FORGET TO ADD ORGAN ID 0 TO ORGANLIST FILE! AND THEN ADD MATERIAL ID AND DENSITY! OTHERWISE VALUE 0 WILL TRANSPORT TO VOX FILE AND PENELOPE DOES NOT ACCEPT MATERIAL = 0! (See Description > Organlist file for more information)
 
 
+This is an example of partial script execution considering ICRP-AF, where user input is in bold.
+
+```
+python ReadPhantom.py
+
+Please insert the name of the phantom file:
+> __AF.dat__
+
+Is your file in binary or in ASCII? (type 0 for binary or 1 for ASCII)
+> __1__
+
+Type in the number of voxels of the phantom in x,y,z.
+> __299 137 348__
+
+Type in the voxel resolution in x,y,z /cm.
+> __0.1775 0.1775 0.484__
+
+Type in the number of different materials in the phantom.
+> __53__
+
+Type in the number of organ IDs - i.e. number of lines in organlist.dat.
+> __141__
+
+>>> Characteristics of your phantom file:
+ > Number of voxels in x,y,z: 299 137 348
+ > Voxel resolution in x,y,z /cm: 0.17750 0.17750 0.17750 0.48400
+ > Phantom size (approximate value) in x,y,z /cm: 62.79000 28.77000 278.40000
+ > Total number of voxels: 14255124
+
+Please check if these values are correct. Do you wish to continue? (y/n)
+> __y__
+
+Reading the phantom and organlist files...
+
+What is the name of the organlist file?
+> __organlist.dat__
+
+Should any rows be skipped when reading the organlist file (includes headers)? If yes, how many? Default is 4.
+> __4__
+
+What are the headers of the columns in the organlist file? Write the names separated by commas.
+It is strongly advised that the names contain no spaces.
+Default names are: "Organ_ID", "Organ", "Material_ID", "Density").
+Warning: Number of column headers provided must be equal to number of columns in the organlist file.
+
+> __Organ_ID, Organ, Material_ID, Density__
+
+...The script will then proceed to process the data and generate the output files.
+```
+
+__References:__
+
+[5] ICRP, 2009. Adult Reference Computational Phantoms. ICRP Publication 110. Ann. ICRP 39 (2). Available from: https://www.icrp.org/publication.asp?id=icrp%20publication%20110
 
