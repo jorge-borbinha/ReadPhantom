@@ -2,7 +2,7 @@
 
 readPhantom is a Python script to read, process, and convert voxel phantom data into files suitable for simulation and visualization with the PENELOPE/penEasy Monte Carlo framework [1,2]. :atom_symbol:
 
-The `readPhantom.py script` is a powerful tool designed to streamline the workflow for researchers and students working with voxel phantoms. It automates the conversion of raw phantom data into structured .vox files required by PENELOPE/penEasy [3,4].
+The `readPhantom.py` is a powerful tool designed to streamline the workflow for researchers and students working with voxel phantoms. It automates the conversion of raw phantom data into structured .vox files required by PENELOPE/penEasy [3,4].
 
 The program is optimized for efficiency, especially when handling large datasets with millions of voxels. It uses Python's numpy and pandas libraries for fast data processing, avoiding slow, line-by-line processing.
 
