@@ -8,8 +8,7 @@
 !*   with PENELOPE/penEasy.                                          *
 !*                                                                   *
 !*  Created by: Jorge Cebola Borbinha, December 2017                 *
-!*              GPSR, Centro de Ciências e Tecnologias Nucleares,    *
-!*              Instituto Superior Técnico                           *
+!*    @website: jorge-borbinha.github.io                             *
 !*                                                                   *
 !*  References:                                                      *
 !*     (1) Borbinha J. Organ Dose Estimates in Thorax CT: Voxel      *
@@ -19,6 +18,14 @@
 !*   Vaz P. Increasing organ dose accuracy through voxel phantom     *
 !*   organ matching with individual patient anatomy. Radiat Phys     *
 !*   Chem.2019 Jun;159:35–46. DOI: 10.1016/j.radphyschem.2019.02.014 *
+!*                                                                   *
+!* Copyright (C) 2017 Jorge Cebola Borbinha,                         *
+!* Faculty of Sciences and Technology, NOVA University of Lisbon     *
+!* This program is free software: you can redistribute it and/or     *
+!* modify it under the terms of the GNU Affero General Public        *
+!* License v3 (AGPLv3) as published by the Free Software Foundation. *
+!* For more information, see                                         *
+!* https://www.gnu.org/licenses/agpl-3.0.html                        *
 !*                                                                   *
 !*********************************************************************
 !*********************************************************************
