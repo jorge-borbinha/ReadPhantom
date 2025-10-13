@@ -1,10 +1,25 @@
+#!/usr/bin/env python3
+# @author:  Jorge Cebola Borbinha
+# @github:  jorge-borbinha
+# @website: jorge-borbinha.github.io
+#
+# Copyright (C) 2025 Jorge Cebola Borbinha
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License v3 (AGPLv3) as 
+# published by the Free Software Foundation.
+# For more information, see https://www.gnu.org/licenses/agpl-3.0.html
+#
+# This software is for educational and research purposes only. The user is 
+# solely responsible for ensuring data privacy and must de-identify all patient
+# data before use. The authors provide this software "as is" without any
+# warranty. By using this software, you agree to these terms.
+#
+
 import numpy as np
 import pandas as pd
 import struct
 import os
-
-# To run a script on terminal: python readPhantom.py
-
 
 def read_progress(z):
     """Prints a progress message based on the current slice number. Serves as 
@@ -80,34 +95,6 @@ def create_vox_file (vox_file, arr_material, arr_density, n_vox_x, n_vox_y, n_vo
         np.savetxt(f1, combined_array_mat_den, fmt = '%3d %7.4f')
     
     print(f'The {vox_file} file was created.\n')
-    
-    # print("--- FILE VERIFICATION ---")
-    # print("\n--- First 10 lines of the VOX file: ---\n")
-    # with open('phantom.vox', 'r') as f:
-    #     for i in range(14):  # 7 header lines + 10 data lines
-    #         print(f.readline().strip())
-            
-    # print("\n--- First 10 data lines that do not have two zeros: ---\n")
-    # with open('phantom.vox', 'r') as f:
-    #     # Skip the 7 header lines
-    #     for _ in range(7):
-    #         next(f)
-    #     # Read and process data lines, skipping the zero-value ones
-    #     count = 0
-    #     for line in f:
-    #         # Split the line into material and density values
-    #         values = line.strip().split()
-    #         if not values:
-    #             continue
-    #         material = int(values[0])
-    #         density = float(values[1])
-    #         # Check if both values are not zero.
-    #         if material != 0 or density != 0.0:
-    #             print(line.strip())
-    #             count += 1
-    #             if count >= 10:
-    #                 break
-        
 
     def create_ct_den_mat_file(file_name, arr_density, arr_material, arr_organ, n_vox_x, n_vox_y, n_vox_z, 
                                  len_x, len_y, len_z, order_indices, loop_order):
