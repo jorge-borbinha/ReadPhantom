@@ -5,6 +5,15 @@
 #
 # Copyright (C) 2025 Jorge Cebola Borbinha
 #
+#  Preferred citations:                                              
+#  (1) Borbinha J. Organ Dose Estimates in Thorax CT: Voxel Phantom Organ 
+# Matching With Individual Patient Anatomy. MSc Thesis, 2017. Available 
+# from: http://hdl.handle.net/10362/    
+#  (2) Borbinha J, Di Maria S, Madeira P, Belchior A, Baptista M, Vaz P. 
+# Increasing organ dose accuracy through voxel phantom organ matching 
+# with individual patient anatomy. Radiat Phys Chem.2019 Jun;159:35–46. 
+# DOI: 10.1016/j.radphyschem.2019.02.014
+#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the Mozilla Public License 2.0
 # For more information, see:
