@@ -1,6 +1,9 @@
 Mozilla Public License Version 2.0
 ==================================
 
+Copyright (C) 2025 Jorge Cebola Borbinha
+
+
 1. Definitions
 --------------
 
