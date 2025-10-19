@@ -187,8 +187,18 @@ By using this software, you acknowledge that you have read, understood, and agre
 
 ## License
 
+The two versions of this software are licensed under different open-source licenses. Please ensure you are following the terms of the correct license for the code you are using.
+
+### 🐍 Python Version (MPL 2.0)
+
+The Python code in this repository is distributed under the __Mozilla Public License 2.0__. For more details, please see the `LICENSE_PYTHON.md` file.
+
+Copyright (C) 2025 Jorge Cebola Borbinha
+
+### 🔢 Fortran Version (MIT License)
+
+The original Fortran code is distributed under the __MIT License__. For more details, please see the `LICENSE_FORTRAN.md` file.
+
 Copyright (C) 2017 Jorge Cebola Borbinha, Faculty of Sciences and Technology, NOVA University of Lisbon.
 
 The Faculty of Sciences and Technology and the NOVA University of Lisbon have the right, perpetual and without geographical boundaries, to file and publish this dissertation through printed copies reproduced on paper or on digital form, or by any other means known or that may be invented, and to disseminate through scientific repositories and admit its copying and distribution for non-commercial, educational or research purposes, as long as credit is given to the author and editor.
-
-This program is free software: you can redistribute it and/or modify it under the terms of the MIT License (Fortran code) and Mozilla Public License 2.0 (python code). For more details, access:[MIT License](https://github.com/jorge-borbinha/reDimLungs/tree/main?tab=MIT-1-ov-file) and [Mozilla Public License 2.0](https://github.com/jorge-borbinha/ReadPhantom?tab=MPL-2.0-1-ov-file)
