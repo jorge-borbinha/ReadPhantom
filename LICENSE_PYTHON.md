@@ -2,7 +2,7 @@ Mozilla Public License Version 2.0
 ==================================
 
 Copyright (C) 2025 Jorge Cebola Borbinha
-___
+---
 
 1. Definitions
 --------------
@@ -262,7 +262,6 @@ have been validly granted by You or Your distributors under this License
 prior to termination shall survive termination.
 
 ************************************************************************
-*                                                                      *
 *  6. Disclaimer of Warranty                                           *
 *  -------------------------                                           *
 *                                                                      *
@@ -277,14 +276,11 @@ prior to termination shall survive termination.
 *  repair, or correction. This disclaimer of warranty constitutes an   *
 *  essential part of this License. No use of any Covered Software is   *
 *  authorized under this License except under this disclaimer.         *
-*                                                                      *
 ************************************************************************
 
 ************************************************************************
-*                                                                      *
 *  7. Limitation of Liability                                          *
 *  --------------------------                                          *
-*                                                                      *
 *  Under no circumstances and under no legal theory, whether tort      *
 *  (including negligence), contract, or otherwise, shall any           *
 *  Contributor, or anyone who distributes Covered Software as          *
@@ -300,7 +296,6 @@ prior to termination shall survive termination.
 *  jurisdictions do not allow the exclusion or limitation of           *
 *  incidental or consequential damages, so this exclusion and          *
 *  limitation may not apply to You.                                    *
-*                                                                      *
 ************************************************************************
 
 8. Litigation
