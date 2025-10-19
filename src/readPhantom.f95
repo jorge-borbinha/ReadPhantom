@@ -1,34 +1,33 @@
 !*********************************************************************
-!*********************************************************************
-!*                     READ PHANTOM PROGRAM                          *
-!*                                                                   *
-!*     This program reads and ASCII/binary voxel phantom file, where *
-!*   the organ numbers are listed countinously in x, y and z, and    *
-!*   generates the files necessary for visualization and simulation  *
-!*   with PENELOPE/penEasy.                                          *
-!*                                                                   *
-!*  Created by: Jorge Cebola Borbinha, December 2017                 *
-!*    @website: jorge-borbinha.github.io                             *
-!*                                                                   *
-!*  References:                                                      *
-!*     (1) Borbinha J. Organ Dose Estimates in Thorax CT: Voxel      *
-!*   Phantom Organ Matching With Individual Patient Anatomy. MSc     *
-!*   Thesis, 2017. Available from: http://hdl.handle.net/10362/      *
-!*     (2) Borbinha J, Di Maria S, Madeira P, Belchior A, Baptista M,*
-!*   Vaz P. Increasing organ dose accuracy through voxel phantom     *
-!*   organ matching with individual patient anatomy. Radiat Phys     *
-!*   Chem.2019 Jun;159:35–46. DOI: 10.1016/j.radphyschem.2019.02.014 *
-!*                                                                   *
-!* Copyright (C) 2017 Jorge Cebola Borbinha,                         *
-!* Faculty of Sciences and Technology, NOVA University of Lisbon     *
-!* This program is free software: you can redistribute it and/or     *
-!* modify it under the terms of the GNU Affero General Public        *
-!* License v3 (AGPLv3) as published by the Free Software Foundation. *
-!* For more information, see                                         *
-!* https://www.gnu.org/licenses/agpl-3.0.html                        *
-!*                                                                   *
-!*********************************************************************
-!*********************************************************************
+!**********************************************************************
+!*                     READ PHANTOM PROGRAM                           *
+!*                                                                    *
+!*     This program reads and ASCII/binary voxel phantom file, where  *
+!*   the organ numbers are listed countinously in x, y and z, and     *
+!*   generates the files necessary for visualization and simulation   *
+!*   with PENELOPE/penEasy.                                           *
+!*                                                                    *
+!*  Created by: Jorge Cebola Borbinha, December 2017                  *
+!*    @website: jorge-borbinha.github.io                              *
+!*                                                                    *
+!*  Preferred citations:                                              *
+!*     (1) Borbinha J. Organ Dose Estimates in Thorax CT: Voxel       *
+!*   Phantom Organ Matching With Individual Patient Anatomy. MSc      *
+!*   Thesis, 2017. Available from: http://hdl.handle.net/10362/       *
+!*     (2) Borbinha J, Di Maria S, Madeira P, Belchior A, Baptista M, *
+!*   Vaz P. Increasing organ dose accuracy through voxel phantom      *
+!*   organ matching with individual patient anatomy. Radiat Phys      *
+!*   Chem.2019 Jun;159:35–46. DOI: 10.1016/j.radphyschem.2019.02.014  *
+!*                                                                    *
+!* Copyright (C) 2017 Jorge Cebola Borbinha,                          *
+!* Faculty of Sciences and Technology, NOVA University of Lisbon      *
+!* This program is free software: you can redistribute it and/or      *
+!* modify it under the terms of the MIT License.                      *
+!* For more information, see:                                         *
+!* https://github.com/jorge-borbinha/ReadPhantom?tab=MIT-1-ov-file    *
+!*                                                                    *
+!**********************************************************************
+!**********************************************************************
 
         program readPhantom
         implicit none
