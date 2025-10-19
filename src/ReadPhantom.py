@@ -6,9 +6,9 @@
 # Copyright (C) 2025 Jorge Cebola Borbinha
 #
 # This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU Affero General Public License v3 (AGPLv3) as 
-# published by the Free Software Foundation.
-# For more information, see https://www.gnu.org/licenses/agpl-3.0.html
+# it under the terms of the Mozilla Public License 2.0
+# For more information, see:
+# https://github.com/jorge-borbinha/ReadPhantom?tab=MPL-2.0-2-ov-file
 #
 # This software is for educational and research purposes only. The user is 
 # solely responsible for ensuring data privacy and must de-identify all patient
